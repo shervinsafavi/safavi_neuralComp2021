@@ -6,7 +6,7 @@ This repository gathers code for the paper:
 
 Matlab codes provided in the 'visualizations' folder can be used reproduce the figures of this paper.
 
-To reproduce the figures, you need to first
+To reproduce the figures, you need a brief setup as explained below.
 
 ## Setup
 - Clone/download the content of the repository in your desired location,
