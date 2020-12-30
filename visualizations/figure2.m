@@ -22,15 +22,16 @@ function figure2()
 
     % assign parameters von Mises coupling model
 
-    vmCMparams.T      = 5;          % simulation length
-    vmCMparams.dt     = .001;       % simulation step
-    vmCMparams.t      = ...         % simulation time steps%
+    vmCMparams.T      = 5;         % simulation length
+    vmCMparams.dt     = .001;      % simulation step
+    vmCMparams.t      = ...        % simulation time steps%
         0 : vmCMparams.dt : vmCMparams.T;      
-    vmCMparams.rate   = 10;         % event rate
+    vmCMparams.rate   = 10;        % event rate
     vmCMparams.nTrial = 50;        % number of trials in each simulation
     vmCMparams.nSim   = 50;        % number of simulation 
                                    % *** last to needd to change to 5000 for the final run
-
+    vmCMparams.f      = 1;         % oscillation frequency of continious signal
+    
     couplingKappas    = [0 .5];     % coupling strengths of both models
 
     % in this simulation the frequency of oscillation is assumed to be 1 Hz
@@ -58,7 +59,7 @@ function figure2()
         axis off; box off
 
         % add figure labels
-        put_f2_subplotsLabels(vc)
+        % put_f2_subplotsLabels(vc)
 
         % modulators
         subplot2d(vc.f2.nR,vc.f2.nC, 3, ros+[1 hfi]);
@@ -335,3 +336,10 @@ function put_f2_subplotsLabels(vc)
     vc.f2.sp32.y = vc.f2.r3.y;
     insert_spLabel(vc.f2.sp32, 'E')
 end
+
+function insert_spLabel(fvc, label)
+% insert_spLabel(fvc, label)
+    hold on
+    text(fvc.x, fvc.y, label, 'HorizontalAlignment', 'center', 'FontWeight','bold', 'fontsize',fvc.sblfz)
+end
+

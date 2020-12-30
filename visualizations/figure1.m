@@ -42,7 +42,7 @@ s1 = plot(tmpidx, 2 * spkTimes(tmpidx) - 7)
 % 2 and 7 here is just added to move it for visualization purposes
 s2 = plot(tmpidx, lambda(tmpidx))
 s3 = plot(tmpidx, cumsum(spkTimes(tmpidx)))
-s4 = plot(tmpidx, cumsum(spkTimes(tmpidx))' - vmCMparams.dt*cumsum(lambda(tmpidx)), 'color',vc.f1.mc)
+s4 = plot(tmpidx, cumsum(spkTimes(tmpidx)) - vmCMparams.dt*cumsum(lambda(tmpidx)), 'color',vc.f1.mc)
 yline(0, 'linestyle','--', 'linewidth', 1, 'color', vc.f1.mc)
 
 box off; axis off
@@ -51,9 +51,3 @@ legend([s1, s2, s3, s4], 'dN(t)','\lambda(t)','N(t)','M(t)', 'location', 'northw
 set(gca, 'fontsize', 14)
 xlabel('Time')
 
-
-%%
-% fsp = '/home/ssafavi/Nextcloud/research/nnr/reports_nnr/papers/p_ploscb2018_gpla/multVarCouplingTheory/'
-% svflg = 1;
-% fn = 'figure1';
-% spf(fsp, fn, svflg)

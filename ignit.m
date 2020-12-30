@@ -2,5 +2,6 @@ tmpPath = which('ignit');
 [phd, ~, ~] = fileparts(tmpPath); % phd : project home directory
                                   
 % add necessary routines
-addpath(fullfile(phd, 'src'));
+addpath(genpath(fullfile(phd, 'src')));
 
+clear phd tmpPath
